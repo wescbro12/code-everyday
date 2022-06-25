@@ -8,18 +8,7 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {
-    stringA = stringA.replace(/[^\w]/g, '').toLowerCase()
-    stringB = stringB.replace(/[^\w]/g, '').toLowerCase()
-    // ^\w = non word characters and g is for global replacement
-
-    return sortString(stringA) === sortString(stringB)
-
-}
-function sortString(string) {
-    return string.split('').sort().join('')
-}
-console.log(anagrams('One One', ('Two two two!')))
+// cd ..
 
 // --- Directions
 // Write a function that accepts a string.  The function should
@@ -30,12 +19,25 @@ console.log(anagrams('One One', ('Two two two!')))
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {
-    const words = str.split(' ')
-    for (let i = 0; i < words.length; i++) {
-        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+// function capitalize(str) {
+//     const words = str.split(' ')
+//     for (let i = 0; i < words.length; i++) {
+//         words[i] = words[i][0].toUpperCase() + words[i].substr(1);
 
+//     }
+//     return words.join(' ')
+// }
+// console.log(capitalize('a short sentence'))
+
+
+function chunk(array, size) {
+    const arrChunk = []
+
+    while (array.length > 0) {
+        const chunkSize = array.splice(0, size)
+        arrChunk.push(chunkSize)
     }
-    return words.join(' ')
+    return arrChunk
 }
-console.log(capitalize('a short sentence'))
+
+console.log(chunk([1, 2, 3, 4, 5], 2))
