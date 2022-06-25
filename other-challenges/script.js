@@ -30,14 +30,48 @@
 // console.log(capitalize('a short sentence'))
 
 
-function chunk(array, size) {
-    const arrChunk = []
+// function chunk(array, size) {
+//     const arrChunk = []
 
-    while (array.length > 0) {
-        const chunkSize = array.splice(0, size)
-        arrChunk.push(chunkSize)
+//     while (array.length > 0) {
+//         const chunkSize = array.splice(0, size)
+//         arrChunk.push(chunkSize)
+//     }
+//     return arrChunk
+// }
+
+// console.log(chunk([1, 2, 3, 4, 5], 2))
+
+
+// --- Directions
+// Write a program that console logs the numbers
+// from 1 to n. But for multiples of three print
+// “fizz” instead of the number and for the multiples
+// of five print “buzz”. For numbers which are multiples
+// of both three and five print “fizzbuzz”.
+// --- Example
+//   fizzBuzz(5);
+//   1
+//   2
+//   fizz
+//   4
+//   buzz
+
+function fizzBuzz(n) {
+    for (let i = 0; i <= n; i++) {
+        if ((i % 3 === 0) && (i % 5 === 0)) {
+            console.log("fizzbuzz")
+        } else if (i % 5 === 0) {
+            console.log("buzz")
+
+        } else if (i % 3 === 0) {
+            console.log("fizz")
+        } else {
+            console.log(i)
+        }
+
     }
-    return arrChunk
+
 }
 
-console.log(chunk([1, 2, 3, 4, 5], 2))
+console.log(fizzBuzz(15))
