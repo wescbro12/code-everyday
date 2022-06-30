@@ -57,21 +57,62 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {
-    for (let i = 1; i <= n; i++) {
-        if ((i % 3 === 0) && (i % 5 === 0)) {
-            console.log("fizzbuzz")
-        } else if (i % 5 === 0) {
-            console.log("buzz")
+// function fizzBuzz(n) {
+//     for (let i = 1; i <= n; i++) {
+//         if ((i % 3 === 0) && (i % 5 === 0)) {
+//             console.log("fizzbuzz")
+//         } else if (i % 5 === 0) {
+//             console.log("buzz")
 
-        } else if (i % 3 === 0) {
-            console.log("fizz")
-        } else {
-            console.log(i)
-        }
+//         } else if (i % 3 === 0) {
+//             console.log("fizz")
+//         } else {
+//             console.log(i)
+//         }
 
-    }
+//     }
 
+// }
+// console.log(fizzBuzz(15))
+
+// --- Directions
+// Given a string, return true if the string is a palindrome
+// or false if it is not.  Palindromes are strings that
+// form the same word if it is reversed. *Do* include spaces
+// and punctuation in determining if the string is a palindrome.
+// --- Examples:
+//   palindrome("abba") === true
+//   palindrome("abcdefg") === false
+
+function palindrome(str) {
+    let word = Math.floor(str.length / 2)
+    for (let i = 0; i < word; i++)
+        if (str[i] !== str[str.length - i - 1]) return false;
+
+    return true
 }
 
-console.log(fizzBuzz(15))
+console.log(palindrome('dome'))
+
+// --- Directions
+// Given a string, return the character that is most
+// commonly used in the string.
+// --- Examples
+// maxChar("abcccccccd") === "c"
+// maxChar("apple 1231111") === "1"
+
+function maxChar(str) {
+    let max = 0;
+    let maxCh = '';
+    str.split('').forEach((char) => {
+        if (str.split(char).length > max) {
+            max = str.split(char).length;
+            maxCh = char;
+        }
+    });
+    return maxCh;
+
+
+
+}
+console.log(maxChar('abccccccd'))
